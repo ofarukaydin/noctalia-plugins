@@ -1,0 +1,56 @@
+id = "buildpulsar/cpa-quota"
+name = "AI Proxy Quotas"
+version = "1.2.0"
+plugin_api = 24
+author = "buildpulsar"
+license = "MIT"
+icon = "brain"
+description = "Codex and Claude account quotas from CLIProxyAPI, directly in your bar."
+
+[[setting]]
+key = "base_url"
+type = "string"
+label_key = "settings.base_url"
+default = ""
+
+[[setting]]
+key = "key_file"
+type = "file"
+label_key = "settings.key_file"
+default = "~/.config/noctalia/secrets/cpa-management.key"
+
+[[setting]]
+key = "poll_seconds"
+type = "int"
+label_key = "settings.poll_seconds"
+default = 60
+min = 30
+max = 1800
+
+[[setting]]
+key = "show_emails"
+type = "bool"
+label_key = "settings.show_emails"
+default = true
+
+[[setting]]
+key = "tier_labels"
+type = "string_map"
+label_key = "settings.tier_labels"
+default = {}
+
+[[service]]
+id = "poller"
+entry = "service.luau"
+
+[[widget]]
+id = "quota"
+entry = "widget.luau"
+
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 920
+height = 740
+placement = "attached"
+open_near_click = true

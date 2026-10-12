@@ -1,0 +1,44 @@
+id = "buildpulsar/aidot-lights"
+name = "AiDot Lights"
+version = "0.1.0"
+plugin_api = 32
+author = "buildpulsar"
+license = "MIT"
+icon = "bulb"
+description = "Control AiDot / Linkind / OREiN Wi-Fi bulbs over the local network."
+tags = ["bar", "panel", "service", "smart-home"]
+dependencies = ["python3"]
+
+[[setting]]
+key = "credentials_file"
+type = "file"
+label_key = "settings.credentials_file"
+default = "~/.config/noctalia/secrets/aidot.json"
+
+[[setting]]
+key = "poll_seconds"
+type = "int"
+label_key = "settings.poll_seconds"
+default = 20
+min = 5
+max = 600
+
+[[service]]
+id = "lights"
+entry = "service.luau"
+
+[[widget]]
+id = "bar"
+entry = "widget.luau"
+
+[[shortcut]]
+id = "toggle"
+entry = "shortcut.luau"
+
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 440
+height = 620
+placement = "attached"
+open_near_click = true

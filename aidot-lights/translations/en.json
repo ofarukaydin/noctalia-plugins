@@ -1,0 +1,4 @@
+{
+  "settings.credentials_file": "Credentials file written by `aidot.py login` (private)",
+  "settings.poll_seconds": "Status refresh interval in seconds"
+}

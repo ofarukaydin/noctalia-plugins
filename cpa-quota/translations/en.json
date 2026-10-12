@@ -1,0 +1,7 @@
+{
+  "settings.base_url": "Proxy HTTPS URL",
+  "settings.key_file": "Management key file (private, one line)",
+  "settings.poll_seconds": "Check interval in seconds (server quota cache applies)",
+  "settings.show_emails": "Show account email addresses",
+  "settings.tier_labels": "Custom tier labels (provider:email \u2192 e.g. Pro $200)"
+}
